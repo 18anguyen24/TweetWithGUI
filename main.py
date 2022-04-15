@@ -1,18 +1,19 @@
-
 import tweepy
-from PIL import Image
 import PySimpleGUIQt as sg
 
 #import from other files here.
 from imgDwn import *
 from find_location import *
 
+#environment variables
+from dotenv import load_dotenv
+load_dotenv()
 
-API_KEY = 'fGqSXDMLxTZWRRel29ZbycFPH'
-API_S_KEY = 'suMFB8uy5L7P1WS4XHeIuB5zuk6ZfZHUPFy7r4wAU5NwumzM9h'
+API_KEY = os.getenv("API_KEY")
+API_S_KEY = os.getenv("API_S_KEY")
 
-ACCESS_TOKEN = '423097845-K4PRdikiSqJA1k5Jta8OoqfOXYTEhRCyw6akG8iQ'
-ACCESS_S_TOKEN = 'ltDxvrgrnARZlgqI9MVBsXMOtiORlxbNIG1jxSBc5r9xq'
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+ACCESS_S_TOKEN = os.getenv("ACCESS_S_TOKEN")
 
 auth = tweepy.OAuthHandler(API_KEY, API_S_KEY)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_S_TOKEN)
